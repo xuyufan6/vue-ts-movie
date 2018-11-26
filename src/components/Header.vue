@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <van-nav-bar title="首页" />
-    <p>1</p>
-  </div>
+  <van-nav-bar title="首页" />
 </template>
 
 <script lang="ts">
