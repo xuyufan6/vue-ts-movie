@@ -7,6 +7,13 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Spinner extends Vue {}
+</script>
+
 <style>
 .spinner {
   margin: 100px auto;

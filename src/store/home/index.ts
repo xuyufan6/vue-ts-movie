@@ -15,10 +15,7 @@ const mutations = {};
 
 const actions = {
   async movieList(context: { commit: Commit }, cate: string) {
-    const res: any = await getMovieList(cate)
-      .then((response: any) => response)
-      // tslint:disable-next-line:no-console
-      .catch((e: string) => console.error(e));
+    const res: any = await getMovieList(cate);
     return res;
   }
 };
