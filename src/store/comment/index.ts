@@ -1,5 +1,5 @@
-import { Commit } from 'vuex';
-import { getMovieComment } from '@/api/movie';
+import { Commit } from "vuex";
+import { getMovieComment } from "@/api/movie";
 
 const actions = {
   async movieComment(context: { commit: Commit }, id: string) {

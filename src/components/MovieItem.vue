@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
+import { Component, Prop, Watch, Vue } from "vue-property-decorator";
 @Component({
   components: {}
 })
@@ -31,7 +31,7 @@ export default class MovieItem extends Vue {
   @Prop()
   private movie!: any;
   private goToMovieDetail(id: string) {
-    this.$router.push({ path: '/MovieDetail/' + id });
+    this.$router.push({ path: "/MovieDetail/" + id });
   }
 }
 </script>
@@ -56,7 +56,7 @@ export default class MovieItem extends Vue {
       position: absolute;
       font-size: 20px;
       font-weight: bold;
-      font-family: 'Microsoft New Tai Lue';
+      font-family: "Microsoft New Tai Lue";
       color: #ffb400;
       right: 0px;
       top: 16px;

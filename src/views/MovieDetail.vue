@@ -2,15 +2,25 @@
   <!-- eslint-disable -->
   <div class="movieDetail">
     <Spinner v-if="loading"></Spinner>
-    <div id="detailMovie" v-if="!loading">
+    <div
+      id="detailMovie"
+      v-if="!loading"
+    >
       <div class="movie">
-        <div class="movieone-background" style="background-image: url('https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2503997609.jpg');   background-size: 100% 100%;">
+        <div
+          class="movieone-background"
+          style="background-image: url('https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2503997609.jpg');   background-size: 100% 100%;"
+        >
         </div>
         <div class="movietwo-background">
         </div>
         <div class="movie-content">
           <div class="movie-cover">
-            <img :src='detail.images.medium' width="130" height="176">
+            <img
+              :src='detail.images.medium'
+              width="130"
+              height="176"
+            >
           </div>
           <div class="movie-right">
             <p class="title">{{detail.title}}</p>
@@ -22,11 +32,18 @@
             <p class="score-num">({{detail.ratings_count}}人评分)</p>
             <p><span v-if="detail.genres.length === 0">未知</span>
               <span v-else-if="detail.genres">
-                <span v-for="item in detail.genres" :key="item" style="margin-right: 4px">{{item}}</span>
+                <span
+                  v-for="item in detail.genres"
+                  :key="item"
+                  style="margin-right: 4px"
+                >{{item}}</span>
               </span>
             </p>
             <p>
-              <span v-for="item in detail.countries" :key="item">
+              <span
+                v-for="item in detail.countries"
+                :key="item"
+              >
                 {{item}}
               </span>
             </p>
@@ -45,9 +62,18 @@
       <div class="actorsList">
         <div class="container-wrap">
           <div class="container">
-            <div class="box" v-for="item in detail.casts" :key="item.id" @click="goToStart(item.id)">
+            <div
+              class="box"
+              v-for="item in detail.casts"
+              :key="item.id"
+              @click="goToStart(item.id)"
+            >
               <div class="img">
-                <img :src='item.avatars.medium' width="80" height="100">
+                <img
+                  :src='item.avatars.medium'
+                  width="80"
+                  height="100"
+                >
               </div>
               <p>{{item.name}}</p>
             </div>
@@ -58,7 +84,11 @@
         </van-cell-group>
       </div>
       <div class="comment">
-        <div class="commentlist" v-for="item in detail.popular_comments" :key="item.id">
+        <div
+          class="commentlist"
+          v-for="item in detail.popular_comments"
+          :key="item.id"
+        >
           <div class="commentitem">
             <div class="msg-rating flex">
               <van-rate v-model="item.rating.value" />
@@ -73,7 +103,10 @@
           </div>
         </div>
         <div class="moreComment">
-          <div class="comments" @click="smallComment(detail.id)">
+          <div
+            class="comments"
+            @click="smallComment(detail.id)"
+          >
             <p>更多短片</p>
           </div>
           <div class="comments">
@@ -86,10 +119,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import { Action } from 'vuex-class';
-import { Rate, Cell, CellGroup } from 'vant';
-import Spinner from '@/components/Spinner.vue';
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+import { Action } from "vuex-class";
+import { Rate, Cell, CellGroup } from "vant";
+import Spinner from "@/components/Spinner.vue";
 
 @Component({
   components: {
@@ -100,7 +133,7 @@ import Spinner from '@/components/Spinner.vue';
   }
 })
 export default class MovieDetail extends Vue {
-  private id: string = '';
+  private id: string = "";
   private detail: any;
   private loading: boolean = true;
   @Action
@@ -115,10 +148,10 @@ export default class MovieDetail extends Vue {
   }
 
   private goToStart(id: string) {
-    this.$router.push({ path: '/StartDetail/' + id });
+    this.$router.push({ path: "/StartDetail/" + id });
   }
   private smallComment(id: string) {
-    this.$router.push({ path: '/SmallComment/' + id });
+    this.$router.push({ path: "/SmallComment/" + id });
   }
 }
 </script>
@@ -180,7 +213,7 @@ export default class MovieDetail extends Vue {
       .ratings {
         font-size: 18px;
         font-weight: bold;
-        font-family: 'Microsoft New Tai Lue';
+        font-family: "Microsoft New Tai Lue";
         color: #ffb400;
       }
     }

@@ -1,6 +1,6 @@
-import * as axios from 'axios';
-import { Toast } from 'vant';
-import { AxiosResponse, AxiosRequestConfig } from 'axios';
+import * as axios from "axios";
+import { Toast } from "vant";
+import { AxiosResponse, AxiosRequestConfig } from "axios";
 
 const service = axios.default.create({
   timeout: 0,
@@ -19,7 +19,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     if (response.status !== 200) {
-      Toast.fail('请求错误!');
+      Toast.fail("请求错误!");
     } else {
       return response.data;
     }

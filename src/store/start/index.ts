@@ -1,8 +1,8 @@
-import { Commit } from 'vuex';
-import { getStratDetail } from '@/api/movie';
+import { Commit } from "vuex";
+import { getStratDetail } from "@/api/movie";
 
 const actions = {
-  async startDetail(context: { commit: Commit }, id: string) {
+  async stratDetail(context: { commit: Commit }, id: string) {
     const res: any = await getStratDetail(id);
 
     return res;
